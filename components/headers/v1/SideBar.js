@@ -27,16 +27,49 @@ export default class SideBar extends React.Component {
           <Text>Item</Text>
         </Content>
       </Container>
+      // <Container>
+      //   <Content>
+      //     <Image
+      //       source={{
+      //         uri:
+      //           "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/drawer-cover.png"
+      //       }}
+      //       style={{
+      //         height: 120,
+      //         width: "100%",
+      //         alignSelf: "stretch",
+      //         position: "absolute"
+      //       }}
+      //     />
+      //     <Image
+      //       square
+      //       style={{
+      //         height: 80,
+      //         width: 70,
+      //         position: "absolute",
+      //         alignSelf: "center",
+      //         top: 20
+      //       }}
+      //       source={{
+      //         uri:
+      //           "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/logo.png"
+      //       }}
+      //     />
+      //   </Content>
+      // </Container>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    backgroundColor: "#fff"
+    padding: 20
+    // backgroundColor: "#fff"
   },
   logo: {
-    height: 40
+    width: "100%",
+    height: 30
+    // alignSelf: "stretch",
+    // position: "absolute"
   }
 });

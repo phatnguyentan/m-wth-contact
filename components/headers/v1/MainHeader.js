@@ -18,45 +18,34 @@ export default class MainHeader extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.toggleDrawer()}>
-              {this.openedDrawer ? (
-                <Icon name="arrow-back" />
-              ) : (
-                <Icon name="menu" />
-              )}
-            </Button>
-          </Left>
-          <Body>{/* <Title>Header</Title> */}</Body>
-          <Right>
-            <Button transparent>
-              <Icon type="FontAwesome" name="search" />
-            </Button>
-            <Button transparent>
-              <Icon type="FontAwesome" name="th" />
-            </Button>
-            <Button transparent>
-              <Icon type="FontAwesome" name="comments-o" />
-            </Button>
-            <Button transparent>
-              <Icon type="FontAwesome" name="bell-o" />
-            </Button>
-            <Button transparent>
-              <Icon type="FontAwesome" name="user-circle" />
-            </Button>
-          </Right>
-        </Header>
-        <Drawer
-          ref={ref => {
-            this.drawer = ref;
-          }}
-          style={{ height: 0 }}
-          content={<SideBar navigator={this.navigator} />}
-          onClose={() => this.closeDrawer()}
-        />
-      </Container>
+      <Header>
+        <Left>
+          <Button
+            transparent
+            onPress={() => this.props.navigation.openDrawer()}
+          >
+            <Icon name="menu" />
+          </Button>
+        </Left>
+        <Body>{/* <Title>HomeScreen</Title> */}</Body>
+        <Right>
+          <Button transparent>
+            <Icon type="FontAwesome" name="search" />
+          </Button>
+          <Button transparent>
+            <Icon type="FontAwesome" name="th" />
+          </Button>
+          <Button transparent>
+            <Icon type="FontAwesome" name="comments-o" />
+          </Button>
+          <Button transparent>
+            <Icon type="FontAwesome" name="bell-o" />
+          </Button>
+          <Button transparent>
+            <Icon type="FontAwesome" name="user-circle" />
+          </Button>
+        </Right>
+      </Header>
     );
   }
 

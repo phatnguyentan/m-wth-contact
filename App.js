@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Alert, Text } from "react-native";
 import MainHeader from "./components/headers/v1/MainHeader";
+import HomeScreen from "./screens/HomeScreen/index";
 import { Container } from "native-base";
 import Expo from "expo";
 
@@ -31,13 +32,14 @@ export default class App extends React.Component {
   }
   // http://docs.nativebase.io/docs/examples/navigation/StackNavigationExample.html
   render() {
-    return (
-      <Container>
-        <MainHeader />
-        <Container>
-          {this.state.contacts.map((x, i) => <Text>{x.name}</Text>)}
-        </Container>
-      </Container>
-    );
+    // return (
+    //   <Container>
+    //     <MainHeader />
+    //     <Container>
+    //       {this.state.contacts.map((x, i) => <Text>{x.name}</Text>)}
+    //     </Container>
+    //   </Container>
+    // );
+    return <HomeScreen />;
   }
 }
