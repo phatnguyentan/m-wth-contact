@@ -1,10 +1,14 @@
 import React from "react";
-import { StyleSheet, Alert } from "react-native";
+import { StyleSheet, Alert, Text } from "react-native";
 import MainHeader from "./components/headers/v1/MainHeader";
 import { Container } from "native-base";
 import Expo from "expo";
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { contacts: [] };
+  }
   async componentDidMount() {
     const time = Date.now();
     const permission = await Expo.Permissions.askAsync(
@@ -21,16 +25,18 @@ export default class App extends React.Component {
     });
 
     const elapsed = (Date.now() - time) / 1000;
-    Alert.alert(
-      "Contacts Read",
-      `Read ${contacts.data.length} contacts in ${elapsed} seconds`
-    );
+    this.setState(previousState => {
+      return { contacts: contacts.data };
+    });
   }
-
+  // http://docs.nativebase.io/docs/examples/navigation/StackNavigationExample.html
   render() {
     return (
       <Container>
         <MainHeader />
+        <Container>
+          {this.state.contacts.map((x, i) => <Text>{x.name}</Text>)}
+        </Container>
       </Container>
     );
   }

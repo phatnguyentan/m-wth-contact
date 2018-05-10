@@ -52,6 +52,7 @@ export default class MainHeader extends React.Component {
           ref={ref => {
             this.drawer = ref;
           }}
+          style={{ height: 0 }}
           content={<SideBar navigator={this.navigator} />}
           onClose={() => this.closeDrawer()}
         />

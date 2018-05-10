@@ -8,6 +8,7 @@ import {
   Right,
   Button,
   Icon,
+  Content,
   Title
 } from "native-base";
 
@@ -15,14 +16,16 @@ export default class SideBar extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Image
-          source={require("./../../../assets/logo-contact.png")}
-          style={styles.logo}
-        />
-        <Text>Item</Text>
-        <Text>Item</Text>
-        <Text>Item</Text>
-        <Text>Item</Text>
+        <Content>
+          <Image
+            source={require("./../../../assets/logo-contact.png")}
+            style={styles.logo}
+          />
+          <Text>Item</Text>
+          <Text>Item</Text>
+          <Text>Item</Text>
+          <Text>Item</Text>
+        </Content>
       </Container>
     );
   }
@@ -34,6 +37,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   logo: {
-    height: 30
+    height: 40
   }
 });
