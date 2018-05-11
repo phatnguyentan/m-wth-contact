@@ -8,11 +8,19 @@ import {
   Right,
   Button,
   Icon,
+  List,
+  ListItem,
   Content,
   Title
 } from "native-base";
 
 export default class SideBar extends React.Component {
+  routes = [
+    { name: "All Contacts" },
+    { name: "Favourite" },
+    { name: "Social" }
+  ];
+
   render() {
     return (
       <Container style={styles.container}>
@@ -21,42 +29,23 @@ export default class SideBar extends React.Component {
             source={require("./../../../assets/logo-contact.png")}
             style={styles.logo}
           />
-          <Text>Item</Text>
-          <Text>Item</Text>
-          <Text>Item</Text>
-          <Text>Item</Text>
+
+          <List
+            dataArray={this.routes}
+            contentContainerStyle={{ marginTop: 20 }}
+            renderRow={data => {
+              return (
+                <ListItem
+                  button
+                  onPress={() => this.props.navigation.navigate(data)}
+                >
+                  <Text>{data.name}</Text>
+                </ListItem>
+              );
+            }}
+          />
         </Content>
       </Container>
-      // <Container>
-      //   <Content>
-      //     <Image
-      //       source={{
-      //         uri:
-      //           "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/drawer-cover.png"
-      //       }}
-      //       style={{
-      //         height: 120,
-      //         width: "100%",
-      //         alignSelf: "stretch",
-      //         position: "absolute"
-      //       }}
-      //     />
-      //     <Image
-      //       square
-      //       style={{
-      //         height: 80,
-      //         width: 70,
-      //         position: "absolute",
-      //         alignSelf: "center",
-      //         top: 20
-      //       }}
-      //       source={{
-      //         uri:
-      //           "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/logo.png"
-      //       }}
-      //     />
-      //   </Content>
-      // </Container>
     );
   }
 }

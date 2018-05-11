@@ -29,7 +29,7 @@ export default class MainHeader extends React.Component {
         </Left>
         <Body>{/* <Title>HomeScreen</Title> */}</Body>
         <Right>
-          <Button transparent>
+          <Button transparent onPress={() => alert("doing")}>
             <Icon type="FontAwesome" name="search" />
           </Button>
           <Button transparent>
@@ -41,17 +41,16 @@ export default class MainHeader extends React.Component {
           <Button transparent>
             <Icon type="FontAwesome" name="bell-o" />
           </Button>
-          <Button transparent>
-            <Icon type="FontAwesome" name="user-circle" />
-          </Button>
+          <Button transparent />
+          <Icon type="FontAwesome" name="user-circle" />
         </Right>
       </Header>
     );
   }
 
   closeDrawer = () => {
-    this.drawer._root.close();
-    this.openedDrawer = false;
+    // this.drawer._root.close();
+    // this.openedDrawer = false;
   };
 
   toggleDrawer = () => {
